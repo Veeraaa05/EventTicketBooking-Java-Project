@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Movie</title>
+    <link rel="stylesheet" href="/css/movieForm.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Add Movie</h1>
+    <form th:action="@{/movies/post}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" th:value="${movie.title}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" th:text="${movie.description}" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="number" id="rating" name="rating" th:value="${movie.rating}" class="form-control" step="0.1" required>
+        </div>
+        <div class="form-group">
+            <label for="language">Language</label>
+            <input type="text" id="language" name="language" th:value="${movie.language}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="text" id="duration" name="duration" th:value="${movie.duration}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="totalSeats">Total Seats</label>
+            <input type="number" id="totalSeats" name="totalSeats" th:value="${movie.totalSeats}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="posterImage">Poster Image</label>
+            <input type="file" id="posterImage" name="posterImage" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+</body>
+
+
+<footer style="background-color: #4baf9b; color: white; text-align: center; padding: 20px;">
+    <p>&copy; <span th:text="'Veeraaa ' + ${T(java.time.LocalDate).now().year}">Veeraaa</span>. All rights reserved.</p>
+</footer>
+
+</html>

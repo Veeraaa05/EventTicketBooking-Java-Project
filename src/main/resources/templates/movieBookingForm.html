@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking Form</title>
+    <link rel="stylesheet" href="/css/moviebookingform.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Optional CSS for styling -->
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="nav-bar">
+    <div class="nav-left">
+        <ul>
+            <li><a th:href="@{/events/create}">Create Event</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a th:href="@{/movies}">Movies</a></li>
+        </ul>
+    </div>
+    <div class="nav-logo">
+        <img src="/images/Logo-3.png" alt="Logo" class="logo-img">
+    </div>
+    <div class="nav-right">
+        <ul>
+            <li><a href="/bookings">My Booking</a></li>
+            <li><a href="/contact">About us</a></li>
+            <li><a th:href="@{auth/signup}" style="color: white; " class="sign">Sign-in</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Container for Movie Booking Form -->
+<div class="container">
+    <h1>Book Your Movie Tickets</h1>
+
+    <!-- Display error or success message -->
+    <div th:if="${message}" class="alert">
+        <p th:text="${message}"></p>
+    </div>
+
+    <!-- Booking Form -->
+    <form th:action="@{/movie-bookings/post}" th:object="${booking}" method="post">
+
+        <!-- Customer Name -->
+        <div class="form-group">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" th:field="*{customerName}" placeholder="Enter your name" required>
+        </div>
+
+        <!-- Customer Email -->
+        <div class="form-group">
+            <label for="customerEmail">Customer Email:</label>
+            <input type="email" id="customerEmail" th:field="*{customerEmail}" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Movie Dropdown -->
+        <div class="form-group">
+            <label for="movie">Movie:</label>
+            <select id="movie" th:field="*{movie}" required>
+                <option value="" disabled selected>Select a movie</option>
+                <th:block th:each="movie : ${movies}">
+                    <option th:value="${movie.movieId}" th:text="${movie.title}"></option>
+                </th:block>
+            </select>
+        </div>
+
+        <!-- Seats -->
+        <div class="form-group">
+            <label for="seatsBooked">Number of Seats:</label>
+            <input type="number" id="seatsBooked" th:field="*{seatsBooked}" min="1" max="100" placeholder="Enter number of seats" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="btn">Book Now</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+
+
+
+<footer style="background-color: #4baf9b; color: white; text-align: center; padding: 20px;">
+    <p>&copy; <span th:text="'Veeraaa ' + ${T(java.time.LocalDate).now().year}">Veeraaa</span>. All rights reserved.</p>
+</footer>
+
+</html>

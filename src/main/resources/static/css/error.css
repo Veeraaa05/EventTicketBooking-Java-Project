@@ -1,0 +1,54 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Error message container */
+h1 {
+    color: #dc3545; /* Bootstrap red color for error */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #6c757d; /* Bootstrap muted text color */
+}
+
+/* Back to Events button styling */
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff; /* Bootstrap blue */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0056b3; /* Darker blue for hover */
+}
+
+
+<footer>
+    <div class="footer-logo">
+        <img src="/images/Logo-3.png" alt="Logo">
+    </div>
+    <p class="copyright">&copy; 2025 Veeraaa. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+    </div>
+</footer>

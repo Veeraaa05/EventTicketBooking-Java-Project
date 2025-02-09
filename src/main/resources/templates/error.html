@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <title>Error</title>
+        <link rel="stylesheet" href="/css/error.css">
+    </head>
+    <body>
+        <h1>Error</h1>
+        <p th:text="${message}">An error occurred.</p>
+        <a th:href="@{/create/}">Back to Events</a>
+    </body>
+
+
+
+    <footer style="background-color: #4baf9b; color: white; text-align: center; padding: 20px;">
+        <p>&copy; <span th:text="'Veeraaa ' + ${T(java.time.LocalDate).now().year}">Veeraaa</span>. All rights reserved.</p>
+    </footer>
+
+</html>

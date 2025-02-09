@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking List</title>
+    <link rel="stylesheet" href="/css/bookingList.css"> <!-- Optional CSS for styling -->
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="nav-bar">
+    <div class="nav-left">
+        <ul>
+            <li><a th:href="@{/events/create}">Create Event</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a th:href="@{/events}">Movies</a></li>
+        </ul>
+    </div>
+    <div class="nav-logo">
+        <img src="/images/Logo-3.png" alt="Logo" class="logo-img">
+    </div>
+    <div class="nav-right">
+        <ul>
+            <li><a href="/movie-bookings">My Booking</a></li>
+            <li><a href="/contact">About us</a></li>
+            <li><a th:href="@{auth/signup}" style="color: white;" class="sign">Sign-in</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Container for Movie Booking List -->
+<div class="container">
+    <h1>Movie Booking List</h1>
+
+    <!-- Movie Booking Table -->
+    <table class="booking-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Customer Name</th>
+            <th>Seats Booked</th>
+            <th>Movie Title</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Thymeleaf: Loop through movie bookings dynamically -->
+        <tr th:each="booking : ${bookings}">
+            <td th:text="${booking.id}">1</td>
+            <td th:text="${booking.customerName}">John Doe</td>
+            <td th:text="${booking.seatsBooked}">2</td>
+            <td th:text="${booking.movie.title}">Sample Movie</td>
+            <td>
+                <!-- View Booking Details -->
+                <a th:href="@{/movie-bookings/{id}(id=${booking.id})}" class="btn">Details</a> |
+
+                <!-- Delete Booking -->
+                <form method="POST" th:action="@{/movie-bookings/delete/{id}(id=${booking.id})}" style="display:inline;">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Create New Booking Button -->
+    <a href="/movie-bookings/create" class="btn">Create New Booking</a>
+</div>
+
+</body>
+
+<footer style="background-color: #4baf9b; color: white; text-align: center; padding: 20px;">
+    <p>&copy; <span th:text="'Veeraaa ' + ${T(java.time.LocalDate).now().year}">Veeraaa</span>. All rights reserved.</p>
+</footer>
+
+</html>

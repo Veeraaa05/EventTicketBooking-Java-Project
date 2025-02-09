@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="/css/movieDetail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="nav-bar">
+    <div class="nav-left">
+        <ul>
+            <li><a th:href="@{/events/create}">Create Event</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a th:href="@{/movies}">Movies</a></li>
+        </ul>
+    </div>
+    <div class="nav-logo">
+        <img src="/images/Logo-3.png" alt="Logo" class="logo-img">
+    </div>
+    <div class="nav-right">
+        <ul>
+            <li><a href="/bookings">My Booking</a></li>
+            <li><a href="/contact">About us</a></li>
+            <li><a th:href="@{auth/signup}" style="color: white; " class="sign">Sign-in</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h1 class="text-center">Movie Details</h1>
+
+<!-- Movie Details -->
+<div class="movie-details">
+    <div class="movie-poster">
+        <img th:src="'data:image/jpeg;base64,' + ${movie.base64PosterImage}" alt="Movie Poster">
+    </div>
+    <div class="details">
+        <p><strong>ID:</strong> <span th:text="${movie.id}"></span></p>
+        <p><strong>Title:</strong> <span th:text="${movie.title}"></span></p>
+        <p><strong>Rating:</strong> <span th:text="${movie.rating}"></span></p>
+        <p><strong>Language:</strong> <span th:text="${movie.language}"></span></p>
+        <p><strong>Description:</strong> <span th:text="${movie.description}"></span></p>
+        <p><strong>Total Seats:</strong> <span th:text="${movie.totalSeats}"></span></p>
+    </div>
+</div>
+
+<!-- Back Button -->
+<a th:href="@{/movies}" class="back-button">Back to Movies</a>
+
+</body>
+
+
+<footer style="background-color: #4baf9b; color: white; text-align: center; padding: 20px;">
+    <p>&copy; <span th:text="'Veeraaa ' + ${T(java.time.LocalDate).now().year}">Veeraaa</span>. All rights reserved.</p>
+</footer>
+
+</html>

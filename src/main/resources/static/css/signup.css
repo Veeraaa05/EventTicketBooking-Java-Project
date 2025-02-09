@@ -1,0 +1,99 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #eaf8f6; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: #ffffff; /* White card-like form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading styling */
+.form-container h1 {
+    color: #4baf9b; /* Primary color */
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Input field styling */
+.form-container input[ type="text" ],
+.form-container input[ type="email" ],
+.form-container input[ type="password" ] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #b3e2da; /* Subtle border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #4baf9b; /* Focus border */
+    box-shadow: 0 0 4px #4baf9b; /* Glow effect */
+}
+
+/* Button styling */
+.form-container button {
+    background-color: #4baf9b; /* Primary button color */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.form-container button:hover {
+    background-color: #399d86; /* Darker shade for hover */
+}
+
+/* Error message styling */
+.error {
+    color: #d9534f; /* Red for error messages */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Link styling */
+.form-container a {
+    color: #4baf9b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form-container h1 {
+        font-size: 20px;
+    }
+}

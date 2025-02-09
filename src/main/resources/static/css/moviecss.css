@@ -1,0 +1,268 @@
+body {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+
+}
+
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: white;
+  color: #fff;
+  position: fixed; /* Makes the navbar fixed at the top */
+  top: 0; /* Positions the navbar at the top of the viewport */
+  width: 100%; /* Ensures the navbar spans the full width of the viewport */
+  height: 70px; /* Fixed height for the navbar */
+  z-index: 1000; /* Ensures the navbar stays above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for better visibility */
+}
+
+
+.nav-bar .nav-left,
+.nav-bar .nav-right {
+    flex: 1;
+}
+
+.nav-bar .nav-logo {
+    position: relative;
+    flex: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+}
+
+
+.nav-bar ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -96px; /* Slightly overflow below the navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.nav-bar .nav-left ul li {
+   margin: 40px 40px;
+   text-decoration: none;
+
+}
+
+.nav-bar .nav-right ul li {
+
+  margin-left: 110px;
+
+}
+.nav-bar .nav-left ul li a {
+
+  text-decoration: none;
+  color: #4baf9b;
+}
+
+.nav-bar .nav-right ul li a {
+
+  text-decoration: none;
+  color: #4baf9b;
+}
+
+.sign{
+  background-color: #4baf9b;
+
+  padding: 10px 20px;
+  border-radius: 40px;
+
+}
+
+/* Page header styling */
+h1 {
+  text-align: center;
+  margin-top: 100px;
+  color: #007bff;
+}
+
+/* Movie Container */
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 150px;
+  padding: 20px;
+}
+
+/* Movie Card Styling */
+.movie-card {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card:hover img {
+  opacity: 0.8;
+}
+
+/* Movie Details */
+.movie-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.movie-details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.movie-details p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.movie-details .btn-details {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffc107;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.movie-details .btn-details:hover {
+  background-color: #e0a800;
+}
+
+.movie-details .btn-delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.movie-details .btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Add New Movie Button */
+.add-movie {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5fc9b3;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 20px auto;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.add-movie:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .nav-bar ul {
+    flex-direction: column;
+  }
+
+  .nav-bar ul li {
+    margin: 10px 0;
+  }
+
+  .nav-logo img {
+    max-width: 80px;
+  }
+}
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Book Button */
+.btn-book {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5fc9b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-book:hover {
+    background-color: #0056b3;
+}
+
+/* Add Details Button */
+.btn-details {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffc107;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: #e0a800;
+}
+
+
+
+<footer>
+    <div class="footer-logo">
+        <img src="/images/Logo-3.png" alt="Logo">
+    </div>
+    <p class="copyright">&copy; 2025 Veeraaa. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+    </div>
+</footer>
+

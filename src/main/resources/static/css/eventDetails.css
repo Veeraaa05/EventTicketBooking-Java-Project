@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+
+}
+
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: white;
+  color: #fff;
+  position: fixed; /* Makes the navbar fixed at the top */
+  top: 0; /* Positions the navbar at the top of the viewport */
+  width: 100%; /* Ensures the navbar spans the full width of the viewport */
+  height: 70px; /* Fixed height for the navbar */
+  z-index: 1000; /* Ensures the navbar stays above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for better visibility */
+}
+
+
+.nav-bar .nav-left,
+.nav-bar .nav-right {
+    flex: 1;
+}
+
+.nav-bar .nav-logo {
+    position: relative;
+    flex: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+}
+
+
+.nav-bar ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -96px; /* Slightly overflow below the navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.nav-bar .nav-left ul li {
+   margin: 40px 40px;
+   text-decoration: none;
+
+}
+
+.nav-bar .nav-right ul li {
+
+  margin-left: 110px;
+
+}
+.nav-bar .nav-left ul li a {
+
+  text-decoration: none;
+  color: #4baf9b;
+}
+
+.nav-bar .nav-right ul li a {
+
+  text-decoration: none;
+  color: #4baf9b;
+}
+.sign{
+  background-color: #4baf9b;
+
+  padding: 10px 20px;
+  border-radius: 40px;
+
+}
+
+h1 {
+  text-align: center;
+  margin-top: 170px; /* Adjust for fixed navbar */
+  font-size: 28px;
+  color: #333;
+}
+
+/* Event Details Container */
+.event-details {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling Each Detail */
+.event-details p {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.event-details strong {
+  color: #4baf9b;
+}
+
+/* Back Button */
+.back-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  text-decoration: none;
+  padding: 12px 25px;
+  background: #4baf9b;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.back-button:hover {
+  background: #3a9b86;
+  transform: scale(1.05);
+}
+
+
+<footer>
+    <div class="footer-logo">
+        <img src="/images/Logo-3.png" alt="Logo">
+    </div>
+    <p class="copyright">&copy; 2025 Veeraaa. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+    </div>
+</footer>
+
+
+

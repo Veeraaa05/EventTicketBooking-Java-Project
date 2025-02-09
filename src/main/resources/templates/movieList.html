@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Movie List</title>
+    <link rel="stylesheet" href="/css/moviecss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="nav-bar">
+    <div class="nav-left">
+        <ul>
+
+            <li><a th:href="@{/events/create}">Create Event</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a th:href="@{/movies}">Movies</a></li>
+        </ul>
+    </div>
+    <div class="nav-logo">
+        <img src="/images/Logo-3.png" alt="Logo" class="logo-img">
+    </div>
+    <div class="nav-right">
+        <ul>
+            <li><a href="/bookings">My Booking</a></li>
+            <li><a href="/contact">About us</a></li>
+            <li><a th:href="@{auth/signup}" style="color: white; " class="sign">Sign-in</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Movie Cards Section -->
+<section>
+    <div class="movie-container">
+        <div class="movie-card" th:each="movie : ${movies}">
+            <img th:src="'data:image/jpeg;base64,' + ${movie.base64PosterImage}" alt="Movie Poster">
+            <div class="movie-details">
+                <h2 th:text="${movie.title}"></h2>
+                <p><strong>Rating:</strong> <span th:text="${movie.rating}"></span></p>
+                <p><strong>Language:</strong> <span th:text="${movie.language}"></span></p>
+                <p><strong>Duration:</strong> <span th:text="${movie.duration}"></span></p>
+                <p><strong>Total Seats:</strong> <span th:text="${movie.totalSeats}"></span></p>
+<!--                <a th:href="@{/movies/{id}(id=${movie.movieId})}" class="btn-details">Details</a>-->
+<!--                <a th:href="@{/bookings/bookform}" class="btn-book">Book</a>-->
+                <a th:href="@{/movie-bookings/create}" class="btn-book">Book</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+
+
+
+<footer style="background-color: #4baf9b; color: white; text-align: center; padding: 20px;">
+    <p>&copy; <span th:text="'Veeraaa ' + ${T(java.time.LocalDate).now().year}">Veeraaa</span>. All rights reserved.</p>
+</footer>
+
+</html>

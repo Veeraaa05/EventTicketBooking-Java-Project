@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="nav-bar">
+    <div class="nav-left">
+        <ul>
+
+            <li><a th:href="@{/events/create}">Create Event</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a th:href="@{/movies}">Movies</a></li>
+        </ul>
+    </div>
+    <div class="nav-logo">
+        <img src="/images/Logo-3.png" alt="Logo" class="logo-img">
+    </div>
+    <div class="nav-right">
+        <ul>
+            <li><a href="/bookings">My Booking</a></li>
+            <li><a href="/contact">About us</a></li>
+            <li><a th:href="@{auth/signup}" style="color: white; " class="sign">Sign-in</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="slider-container">
+    <div class="slides">
+        <img src="/images/pushpa.avif" alt="Pushpa">
+        <img src="/images/moana.avif" alt="Moana">
+        <img src="/images/simba.avif" alt="Simba">
+    </div>
+    <!-- Navigation Buttons -->
+    <button class="prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i> </button>
+    <button class="next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i> </button>
+</section>
+
+
+
+
+<section>
+    <div class="exclusive">
+        <a href=""><h1>Exiting News! We're give 25% Offer For Every Movie Ticket Booiking</h1></a>
+    </div>
+
+</section>
+
+<section>
+    <div class="center-content">
+        <h1>Events created by thousands of organizations around the globe</h1>
+        <div>
+            <img src="/images/cent-1.png" alt="">
+            <img src="/images/EDS-logo.png" alt="">
+            <img src="/images/covey-theater-logo.png" alt="">
+            <img src="/images/vilamoura-logo1.png" alt="">
+            <img src="/images/kendall-nicole-eich-foundation-1.png" alt="">
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section-3">
+    <div class="row-1">
+        <div class="col-1">
+            <h1>Lowest fees in the industry</h1>
+            <h3>No contracts, no monthly fees, no worries.</h3>
+            <p>Affordable ticket fees that make sense. We only charge when you sell tickets.</p>
+
+            <a th:href="@{/events/create}"><h1>Create Event</h1></a>
+        </div>
+        <div class="col-2">
+            <img src="/images/mid-img.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="section-4">
+    <div class="row-2">
+        <div class="col-1">
+            <h1>Free For Donation Events and Educational Events</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nesciunt laborum fugit necessitatibus, aliquid quibusdam adipisci quidem repellat, saepe quae, at esse reprehenderit autem similique deserunt facilis accusantium? Consequatur consequuntur amet aperiam a commodi maiores.</p>
+        </div>
+        <div class="col-2-1">
+            <img src="images/mid-2.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+
+
+
+<footer style="background-color: #4baf9b; color: white; text-align: center; padding: 20px;">
+    <p>&copy; <span th:text="'Veeraaa ' + ${T(java.time.LocalDate).now().year}">Veeraaa</span>. All rights reserved.</p>
+</footer>
+
+</html>
